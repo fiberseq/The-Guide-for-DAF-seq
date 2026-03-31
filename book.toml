@@ -12,9 +12,9 @@ use-default-preprocessors = true
 [output.html]
 default-theme = "ayu"
 preferred-dark-theme = "navy"
-git-repository-url = "https://github.com/fiberseq/dafseq.github.io"
+git-repository-url = "https://github.com/fiberseq/The-Guide-for-DAF-seq"
 git-repository-icon = "fa-github"
-edit-url-template = "https://github.com/fiberseq/dafseq.github.io/edit/main/{path}"
+edit-url-template = "https://github.com/fiberseq/The-Guide-for-DAF-seq/edit/main/{path}"
 mathjax-support = true
 
 [output.html.fold]

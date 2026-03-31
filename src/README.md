@@ -33,4 +33,4 @@ The method is described in:
 For questions or contributions, see the relevant GitHub repositories:
 - [DAF-seq Manuscript](https://github.com/StergachisLab/DAF-seq-Manuscript) -- Analysis code and supplementary materials
 - [DAF-QC-SMK](https://github.com/StergachisLab/DAF-QC-SMK) -- QC pipeline source code and documentation
-- [This website](https://github.com/fiberseq/dafseq.github.io) -- Source for these documentation pages
+- [This website](https://github.com/fiberseq/The-Guide-for-DAF-seq) -- Source for these documentation pages
