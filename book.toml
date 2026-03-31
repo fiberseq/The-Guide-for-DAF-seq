@@ -1,0 +1,22 @@
+[book]
+authors = ["Mitchell Robert Vollger"]
+language = "en"
+src = "src"
+title = "The guide to DAF-seq"
+
+[build]
+build-dir = "book"
+create-missing = false
+use-default-preprocessors = true
+
+[output.html]
+default-theme = "ayu"
+preferred-dark-theme = "navy"
+git-repository-url = "https://github.com/fiberseq/dafseq.github.io"
+git-repository-icon = "fa-github"
+edit-url-template = "https://github.com/fiberseq/dafseq.github.io/edit/main/{path}"
+mathjax-support = true
+
+[output.html.fold]
+enable = true
+level = 2
