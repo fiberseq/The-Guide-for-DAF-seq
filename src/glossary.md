@@ -18,4 +18,4 @@
 
 **Consensus BAM** (PacBio only): A BAM file containing multiple-sequence-alignment (MSA) consensus sequences built from groups of PCR duplicate reads. Consensus generation improves accuracy of deamination calls.
 
-**fibertools**: A suite of command-line tools for analyzing single-molecule chromatin fiber data. The `ddda-to-m6a` subcommand converts DAF-seq deamination marks into m6A-equivalent format for compatibility with Fiber-seq analysis tools, and `add-nucleosomes` infers nucleosome positions from the resulting data.
+**fibertools**: A suite of command-line tools for analyzing single-molecule chromatin fiber data. The `ddda-to-m6a` subcommand converts DAF-seq deamination marks (i.e. Y and R bases) into m6A-equivalent format for compatibility with Fiber-seq analysis tools, and `add-nucleosomes` infers nucleosome positions from the resulting data.
