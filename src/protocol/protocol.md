@@ -19,30 +19,40 @@ This protocol covers the complete DAF-seq workflow from nuclei isolation through
 
 > **Note:** Buffer A without spermidine or ZnCl2 can be prepared in large quantities (e.g. 100 mL) and safely stored for up to 6 months at room temperature. Add 1 uL of 0.5 M spermidine and 1 uL of 10 uM ZnCl2 to 998 uL of buffer A stock right before using. Store spermidine at -20 C for up to 6 months.
 
+### 2X Lysis buffer (or substitute)
+
+| Cell Line       | Final % IGEPAL   | 2X Stock solution | µl 10% IGEPAL/1ml Buffer A |
+|-----------------|------------------|-------------------|----------------------------|
+| K562 cells    | 0.025    | 0.05    | 5 µl    |
+| HepG2    | 0.025    | 0.05    | 5 µl    |
+| Lymphoblasts    | 0.025    | 0.05    | 5 µl    |
+| HeLa    | 0.05    | 0.1    | 10 µl    |
+| Fibroblasts| 0.1    | 0.2    | 20 µl    |      
+
+> **Note:** Nuclei isolation is cell and tissue-type dependent and should be optimized by the user to ensure completion. Triton or digitonin (e.g 0.1% (w/v)) can be substituted for IGEPAL.
+
 ### Additional reagents
 
-- Reagents for nuclei isolation, e.g.
-    - Buffer A + 0.1% (w/v) digitonin
-    - 1x PBS, pH 7.4 + 0.5% BSA
+- 1x PBS, pH 7.4 + 0.5% BSA
 - UNG inhibitor (NEB M0281)
-- SsDddA stock: 100 uM, aliquots stored at -80 C
-- DddI stock: 1000 uM, aliquots stored at -80 C
+- SsDddA stock*: 100 uM, aliquots stored at -80 C
+- DddI stock*: 1000 uM, aliquots stored at -80 C
 - NEB Monarch Spin gDNA Extraction Kit (T3010)
 - Qubit dsDNA assay
 - LoBind tubes
 
----
+* See [Protein Purification](protein-purification.md) for how to generate these. You can also e-mail absterga@uw.edu for protein aliquots
 
 ## Nuclei Isolation
 
-*Nuclei isolation is cell and tissue-type dependent and should be optimized by the user to ensure completion. Below is an example protocol which we have used for LCLs. Triton and IGEPAL can be substituted for digitonin.*
+*Below is an example protocol which we have used for LCLs. Nuclei isolation should be optimized by the user for each tissue and cell type.*
 
-1. Collect 500k-1M cells into a 1.5 mL LoBind tube.
+1. Collect 250k-1M cells into a 1.5 mL LoBind tube.
 2. Pellet at 350 x g for 5 min at 4 C. Remove supernatant.
 3. Wash cells with 1 mL 1x PBS, pH 7.4 + 0.5% BSA.
 4. Pellet at 350 x g for 5 min at 4 C. Remove supernatant.
 5. Resuspend pellet in 60 uL Buffer A.
-6. Add 60 uL 2x Lysis Buffer. Mix by gently tapping the side of the tube and incubate 10 min on ice.
+6. Add 60 uL 2x Lysis Buffer (1:1 dilution to a final 1× Lysis Buffer concentration). Mix by gently tapping the side of the tube and incubate 10 min on ice.
 7. Spin 350 x g for 5 min at 4 C. Remove supernatant.
 8. Resuspend nuclei in 50 uL Buffer A.
 
@@ -56,11 +66,11 @@ This protocol covers the complete DAF-seq workflow from nuclei isolation through
 
 ---
 
-## On-Nuclei Cytosine Deamination
+## On-Nuclei Cytidine Deamination
 
 10. Add 2 uL SsDddA (100 uM stock, final 4 uM) to the 47 uL nuclei suspension.
-11. Incubate 10 min at 25 C. Mix gently; avoid vortexing.
-12. Immediately add 1 uL DddI (1000 uM, 5-molar excess) to stop the reaction.
+11. Incubate 10 min at 25 C in a PCR machine or heat block. Mix gently; avoid vortexing.
+12. Immediately add 1 uL DddI (1000 uM, 5-molar excess) to stop the reaction. Mix by gently tapping.
 13. (Optional) Store at -20 C before DNA extraction.
 
 ---
@@ -91,8 +101,9 @@ This protocol covers the complete DAF-seq workflow from nuclei isolation through
 
 ## Notes
 
-- The reaction volume of the "On-Nuclei Cytosine Deamination" may be doubled to accommodate 500K cells. If 100 uL volume is used, no additional buffer is required at step 14 of "DNA Extraction".
+- The reaction volume of the "On-Nuclei Cytidine Deamination" may be doubled to accommodate 500K nuclei in step 9. If 100 uL volume is used, no additional buffer is required at step 14 of "DNA Extraction".
 - We have observed that the recovery of SsDddA-treated DNA is approximately 10-20% as efficient as untreated DNA using the Monarch Spin gDNA Extraction Kit. This recovery is typically sufficient for downstream applications.
+- Buffer A is compatible with SsDddA provided by our lab. Other cytidine deaminases may require buffers containing ZnCl2.
 
 ---
 
