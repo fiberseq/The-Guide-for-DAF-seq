@@ -41,7 +41,7 @@ This protocol covers the complete DAF-seq workflow from nuclei isolation through
 - Qubit dsDNA assay
 - LoBind tubes
 
-\* See [Protein Purification](protein-purification.md) for how to generate these. You can also e-mail absterga@uw.edu for protein aliquots
+&#42; See [Protein Purification](protein-purification.md) for how to generate these. You can also e-mail absterga@uw.edu for protein aliquots
 
 ## Nuclei Isolation
 
