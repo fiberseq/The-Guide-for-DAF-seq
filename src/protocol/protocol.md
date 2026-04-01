@@ -43,6 +43,8 @@ This protocol covers the complete DAF-seq workflow from nuclei isolation through
 
 &#42; See [Protein Purification](protein-purification.md) for how to generate these. You can also e-mail absterga@uw.edu for protein aliquots
 
+---
+
 ## Nuclei Isolation
 
 *Below is an example protocol which we have used for LCLs. Nuclei isolation should be optimized by the user for each tissue and cell type.*
