@@ -9,6 +9,8 @@
 - [DAF-seq Protocol](protocol/protocol.md)
 - [Primer Design](protocol/primer-design.md)
 - [Protein Purification](protocol/protein-purification.md)
+    - [SsDddA Purification](protocol/ddda-purification.md)
+    - [DddI Purification](protocol/dddi-purification.md)
 
 ---
 
