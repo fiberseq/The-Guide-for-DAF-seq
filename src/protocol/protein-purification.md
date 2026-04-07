@@ -1,12 +1,19 @@
 # Protein Purification
 
-*This section is under development. Protocols for purifying SsDddA and DddI will be added soon.*
+This section covers the expression and purification of the *Simiaoa sunii* ([SsDddA](protocol/ddda-purification.md) cytidine deaminase and the [DddI](protocol/dddi-purification.md) inhibitor used in the [DAF-seq Protocol](protocol.md).
 
-Planned content includes:
+We recommend storing SsDddA and DddI aliquots at -80 C. Both SsDddA and DddI are stable for at least 5 freeze-thaw cycles.
 
-- Expression and purification of SsDddA (the *Simiaoa sunii* cytidine deaminase used in the [DAF-seq Protocol](protocol.md))
-- Expression and purification of DddI (the deaminase inhibitor used to stop the reaction)
-- Recommended storage conditions and aliquoting strategies
-- Quality control assays for verifying enzyme activity
+---
+## Addgene
 
-In the meantime, refer to the methods section of the [DAF-seq publication](https://doi.org/10.1038/s41587-025-02914-3) for purification details.
+The dual expression plasmid for SsDddA and the expression plasmid for DddI are now avaiable through Addgene! 
+
+[SsDddA, Addgene# 254736](https://www.addgene.org/254736)
+
+[DddI, Addgene# 254901](https://www.addgene.org/254901)
+
+---
+# Need purified protein?
+
+Email absterga@uw.edu for purified SsDddA and DddI protein aliquots.
