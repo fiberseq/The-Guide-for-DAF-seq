@@ -123,7 +123,7 @@ This protocol covers the complete DAF-seq workflow from nuclei isolation through
 
 <div class="warning">
   
-**IMPORTANT:** Enzyme activity varies by batch. We are currently in the process of defining an activity unit. 2 uM is the optimal concentration for SsDddA sent to most users as of April 2026.
+**IMPORTANT:** Enzyme activity varies by batch. We are currently in the process of defining an activity unit. For our current batch of SsDddA (as of April 2026, produced by our lab in mid-2025), we recommend starting with 2 uM and further optimizing concentration by enzyme titration, if needed.
 
 </div>
 
