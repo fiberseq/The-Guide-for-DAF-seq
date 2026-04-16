@@ -127,6 +127,7 @@ This protocol covers the complete DAF-seq workflow from nuclei isolation through
 **IMPORTANT:** Enzyme activity varies by batch. We are currently in the process of defining an activity unit. 2 uM is the optimal concentration for SsDddA sent to most users as of April 2026.
 
 </div>
+
 ---
 
 ## DNA Extraction for Targeted DAF-seq
