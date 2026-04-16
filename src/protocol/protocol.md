@@ -113,7 +113,7 @@ This protocol covers the complete DAF-seq workflow from nuclei isolation through
 
 ## On-Nuclei Cytidine Deamination
 
-1. Add 2 µL SsDddA (100 µM stock, final 4 µM) to the 47 µL nuclei suspension.
+1. Add 1-2 µL SsDddA (100 µM stock, final 2-4 µM) to the 47 µL nuclei suspension.
 2. Incubate 10 min at 25°C in a PCR machine or heat block. Mix gently; avoid vortexing.
 3. Immediately add 1 µL DddI (1000 µM, 5-molar excess) to stop the reaction. Mix by gently tapping.
 4. Proceed according to your application:
@@ -122,6 +122,11 @@ This protocol covers the complete DAF-seq workflow from nuclei isolation through
     
     b. **Single-cell DAF-seq:** Proceed to [Single-cell DAF-seq Fluorescence-Activated Cell Sorting (FACS)](protocol.md#single-cell-daf-seq-fluorescence-activated-cell-sorting-facs). Maintain nuclei on ice until sorting.
 
+<div class="warning">
+  
+**IMPORTANT:** Enzyme activity varies by batch. We are currently in the process of defining an activity unit. 2 uM is the optimal concentration for SsDddA sent to most users as of April 2026.
+
+</div>
 ---
 
 ## DNA Extraction for Targeted DAF-seq
