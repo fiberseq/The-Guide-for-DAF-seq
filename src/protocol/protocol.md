@@ -8,16 +8,15 @@ This protocol covers the complete DAF-seq workflow from nuclei isolation through
 
 | Final Concentration       | Stock Concentration   | Volume stock soln |
 |---------------------------|-----------------------|-------------------|
-| RNase- DNase- free H2O   | 100%                  | 959 uL            |
+| RNase- DNase- free H2O   | 100%                  | 960 uL            |
 | 15 mM Tris-Cl, pH 8.0    | 1 M Tris-Cl, pH 8.0  | 15 uL             |
 | 15 mM NaCl               | 5 M NaCl              | 3 uL              |
 | 60 mM KCl                | 3 M KCl               | 20 uL             |
 | 1 mM EDTA, pH 8.0        | 0.5 M EDTA, pH 8.0   | 2 uL              |
 | 0.5 mM EGTA, pH 8.0      | 0.5 M EGTA, pH 8.0   | 1 uL              |
 | 0.5 mM Spermidine        | 0.5 M Spermidine      | 1 uL              |
-| 10 nM ZnCl2              | 10 uM ZnCl2          | 1 uL              |
 
-> **Note:** Buffer A without spermidine or ZnCl2 can be prepared in large quantities (e.g. 100 mL) and safely stored for up to 6 months at room temperature. Add 1 uL of 0.5 M spermidine and 1 uL of 10 uM ZnCl2 to 998 uL of buffer A stock right before using. Store spermidine at -20 C for up to 6 months.
+> **Note:** Buffer A without spermidine can be prepared in large quantities (e.g. 100 mL) and safely stored for up to 6 months at room temperature. Add 1 uL of 0.5 M spermidine to 999 uL of buffer A stock right before using. Store spermidine at -20 C for up to 6 months.
 
 ### Lysis buffer
 *To be optimized by user. Below are examples that have been used successfully in our lab*
