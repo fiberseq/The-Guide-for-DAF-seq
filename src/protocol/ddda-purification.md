@@ -1,4 +1,4 @@
-# SsDddA Purification Protocol
+# SsDddA Purification with FPCL Protocol
 
 This protocol for the expression and purification of SsDddA was compiled and optimized by Devaraja G. Mudeppa (Stergachis Lab, Division of Medical Genetics, University of Washington).
 
@@ -57,6 +57,16 @@ This protocol for the expression and purification of SsDddA was compiled and opt
 
 * IPTG stock: 1 M in water
 * Kanamycin stock: 100 mg/mL in water
+
+---
+
+## Equipment
+
+* Shaker incubator
+* Centrifuge capable of up to 40,000 × g
+* Sonicator with a 13 mm probe
+* FPLC system
+* Spectrophotometer
 
 ---
 
