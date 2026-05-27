@@ -21,6 +21,7 @@ The method is described in:
 
 **Dry Lab**
 - [DAF-QC Pipeline](drylab/daf-qc.md) -- Snakemake pipeline for quality control and initial processing of DAF-seq data
+- [FiberBrowser](drylab/fiberbrowser.md) -- Interactive single-molecule genome browser for DAF-seq and Fiber-seq data
 
 **Reference**
 - [Glossary](glossary.md) -- Definitions of key DAF-seq terms and concepts
