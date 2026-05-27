@@ -90,14 +90,11 @@ See `config/config.yaml` in the repository for the full list of options with des
 - **QC metrics**: Targeting efficiency, deamination rates (overall and by 2-bp sequence context), strand calling, enzyme bias, and mutation rates.
 - **HTML dashboard**: `results/{sample_name}/qc/{sample_name}.dashboard.html` with all QC plots. The dashboard is self-contained (plots are embedded), so you can copy a single file for sharing or local viewing.
 
-## Downstream analysis with fibertools
+## Downstream analysis
 
-After QC, DAF-seq data can be further processed with [fibertools](https://github.com/fiberseq/fibertools-rs) (`ft`) for chromatin fiber analysis:
+After QC, DAF-seq data can be processed for nucleosome, MSP, and transcription factor footprint calling with [FiberHMM](fiberhmm.md), a Hidden Markov Model toolkit that operates natively on deaminase data (DddA and DddB) and emits [fibertools](https://github.com/fiberseq/fibertools-rs)-compatible BAMs plus [Molecular-annotation spec](https://github.com/fiberseq/Molecular-annotation-spec) tags. See the [FiberHMM](fiberhmm.md) page for installation and usage.
 
-1. **`ft ddda-to-m6a`**: Converts DAF-seq deamination marks (C-to-T / G-to-A) into m6A-equivalent format, enabling compatibility with the Fiber-seq analysis ecosystem.
-2. **`ft add-nucleosomes`**: Infers nucleosome positions from the converted deamination data.
-
-These steps allow you to use the full suite of Fiber-seq visualization and analysis tools on DAF-seq data. See the [fibertools documentation](https://fiberseq.github.io) for details.
+Alternatively, the Fiber-seq nucleosome caller `ft add-nucleosomes` can be applied to DAF-seq data after first converting the deamination marks to m6A-equivalent format with `ft ddda-to-m6a`. This routes DAF-seq data through the Fiber-seq analysis stack; see the [fibertools documentation](https://fiberseq.github.io) for details.
 
 ## Further reading
 
