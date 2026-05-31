@@ -18,6 +18,7 @@
 
 - [DAF-QC Pipeline](drylab/daf-qc.md)
 - [FiberHMM](drylab/fiberhmm.md)
+- [FiberBrowser](drylab/fiberbrowser.md)
 
 ---
 
