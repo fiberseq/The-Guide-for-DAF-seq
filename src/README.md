@@ -11,7 +11,7 @@ The method is described in:
 - **Running the experiment?** Start with the [DAF-seq Protocol](protocol/protocol.md) for the complete wet lab workflow.
 - **Analyzing data?** Jump to the [DAF-QC Pipeline](drylab/daf-qc.md) for computational setup and quality control.
 - **Calling footprints?** Run [FiberHMM](drylab/fiberhmm.md) to call nucleosomes, MSPs, and TF/Pol II footprints from DAF-seq or Fiber-seq data.
-- **Exploring single molecules?** Use [FiberBrowser](drylab/fiberbrowser.md) to visualize per-read footprints interactively at gene-scale loci.
+- **Exploring your data?** Use [FiberBrowser](drylab/fiberbrowser.md) to visualize and analyze DAF-seq and Fiber-seq reads interactively.
 - **New to DAF-seq?** See the [Glossary](glossary.md) for definitions of key terms.
 
 ## What's here
