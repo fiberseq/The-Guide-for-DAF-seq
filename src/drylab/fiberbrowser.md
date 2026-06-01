@@ -1,12 +1,14 @@
 # FiberBrowser
 
-FiberBrowser is an interactive single-molecule genome browser for DAF-seq
-and Fiber-seq data, and the visualization component of the
-[FiberHMM](https://github.com/fiberseq/FiberHMM) pipeline. It is built
-for labs that want to explore per-read footprint patterns interactively --
-the regime where single-molecule chromatin assays diverge most from bulk
-tracks -- and that care about analyzing the full read set at a locus rather
-than a downsampled view.
+FiberBrowser is an interactive, single-molecule-genomics-focused genome
+browser for DAF-seq and Fiber-seq, but which supports a wide range of
+genomic datatypes. It is the visualization component of the
+[FiberHMM](https://github.com/fiberseq/FiberHMM) pipeline, but does not
+require footprints to be useful. It allows fast and convenient exploration
+and quantitative analysis of per-read footprinting and
+methylation/deamination patterns across 1000s of reads, providing extensive
+functionality missing from modern browsers which focus on aggregate
+short-read tracks.
 
 ![FiberBrowser overview at the eve locus](img/fiberbrowser-overview.png)
 
