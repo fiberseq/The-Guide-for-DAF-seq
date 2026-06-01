@@ -2,7 +2,7 @@
 
 A strategy for designing primers for targeted DAF-seq experiments.
 
-FiberBrowser also provides a built-in primer design tool (local BLAST required) that can identify the best DAF-compliant primers covering a selected region, letting you use your existing Fiber-seq data as a guide.
+[FiberBrowser](../drylab/fiberbrowser.md) also provides a built-in primer design tool (local BLAST required) that can identify the best DAF-compliant primers covering a selected region, letting you use your existing Fiber-seq data as a guide.
 
 ## Materials
 
