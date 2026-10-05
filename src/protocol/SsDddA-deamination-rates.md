@@ -43,11 +43,11 @@ Forward: TCCCCTCCAARRCTTCAR
 Reverse: CAACCCCCRCAACCTATCA
 Amplicon length: 4498 bp
 
-**PCR mix**
+**PCR mix**  
 DAF-treated DNA(~30-50ng)  
-3 μL 5 μM Forward primer
-3 μL 5 μM Reverse primer
-25 μl. repliQa HiFi ToughMix(2X) (Qunatabio; Part No:95200-100)
+3 μL 5 μM Forward primer  
+3 μL 5 μM Reverse primer  
+25 μl. repliQa HiFi ToughMix(2X) (Qunatabio; Part No:95200-100)  
 Water to 50 μl
 
 
