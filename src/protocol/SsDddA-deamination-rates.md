@@ -5,7 +5,7 @@ Following a 10-minute incubation with SsDddA, reactions containing two different
 ## Targeted DAF-seq median deamination rates by SsDddA production batch
 
 
-### CA10 amplicons (hg38 chr17:51829518-51834396)
+### CA10 amplicons (hg38, chr17:51829518-51834396)
 
 | Preparation | 1 uM | 2 uM | 4 uM|
 |---|---|---|---|
@@ -14,7 +14,7 @@ Following a 10-minute incubation with SsDddA, reactions containing two different
 | EpiCypher batch | 14% | 20% | 26% |
 
 
-### NAPA amplicons (hg38 chr19:47,514,488-47,518,985)
+### NAPA amplicons (hg38, chr19:47,514,488-47,518,985)
 
 | Preparation | 1 uM | 2 uM | 4 uM|
 |---|---|---|---|
@@ -23,5 +23,27 @@ Following a 10-minute incubation with SsDddA, reactions containing two different
 | EpiCypher batch | 29% | 36% | 42% |
 
 
+## PCR primers and reaction conditions
+
+### CA10  primers (hg38, chr17:51829518-51834396)
+Forward: AAGGAGTCATGAGGGACGTATGCAA 
+Reverse: AGGCAGGTCCATGAAGAGTGTCCATT 
+Amplicon length: 4878 bp
+
+**PCR mix**
+SsDddA-treated DNA(~30-50ng)
+1.5 μL  5 μM Forward primer
+1.5 μL   5 μM Reverse primer
+25 μl. repliQa HiFi ToughMix(2X) (Qunatabio; Part No:95200-100)
+Water to 50 μl
+
+**Thermocycling**
+1. 98 C, 30s
+2. 98 C, 10s
+3. 66 C, 5s
+4. 68 C, 25s
+4. Go to step 2, 29x for 30 cycles total
+5. 68 C, 1 min
+hold at 4 C
 
 
