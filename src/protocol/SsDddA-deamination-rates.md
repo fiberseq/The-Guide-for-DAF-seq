@@ -6,7 +6,7 @@ Following a 10-minute incubation with SsDddA, reactions containing two different
 
 ### CA10 amplicons (hg38 chr17:51829518-51834396)
 
-| Preparation/SsDddA conc., µM | 1 uM | 2 uM | 4 uM|
+| Preparation | 1 uM | 2 uM | 4 uM|
 |---|---|---|---|
 | Stergachis batch1 | 16% | 23% | 30% |
 | Stergachis batch2 | 15% | 21% | 30% |
@@ -14,7 +14,7 @@ Following a 10-minute incubation with SsDddA, reactions containing two different
 
 ### NAPA amplicons (hg38 chr19:47,514,488-47,518,985)
 
-| Preparation/SsDddA conc., µM | 1 uM | 2 uM | 4 uM|
+| Preparation | 1 uM | 2 uM | 4 uM|
 |---|---|---|---|
 | Stergachis batch1 | 32% | 40% | 47% |
 | Stergachis batch2 | 32% | 38% | 46% |
