@@ -28,7 +28,9 @@ Following a 10-minute incubation with SsDddA, reactions containing two different
 
 ## PCR primers and reaction conditions
 
-**_CA10_  primers (hg38, chr17:51829518-51834396)**  
+### _CA10_ region (hg38, chr17:51829518-51834396)
+
+**Primers**  
 Forward: AAGGAGTCATGAGGGACGTATGCAA  
 Reverse: AGGCAGGTCCATGAAGAGTGTCCATT  
 Amplicon length: 4878 bp
@@ -40,7 +42,7 @@ SsDddA-treated DNA(~30-50ng)
 25 μl. repliQa HiFi ToughMix(2X) (Qunatabio; Part No:95200-100)  
 Water to 50 μl
 
-**_CA10_ Thermocycling**
+**Thermocycling protocol**
 1. 98 C, 30s
 2. 98 C, 10s  
 3. 66 C, 5s  
@@ -49,7 +51,10 @@ Water to 50 μl
 5. 68 C, 1 min
 6. hold at 4 C
 
-**_NAPA_ primers (hg38, chr19:47,514,488-47,518,985)**  
+
+### _NAPA_ region (hg38, chr19:47,514,488-47,518,985)
+
+**Primers**  
 Forward: TCCCCTCCAARRCTTCAR  
 Reverse: CAACCCCCRCAACCTATCA  
 Amplicon length: 4498 bp
@@ -61,7 +66,7 @@ SsDddA-treated DNA(~30-50ng)
 25 μl. repliQa HiFi ToughMix(2X) (Qunatabio; Part No:95200-100)  
 Water to 50 μl
 
-**_NAPA_ Thermocycling**
+**Thermocycling protocol**
 1. 98 C, 30s
 2. 98 C, 10s  
 3. 56 C, 5s  
