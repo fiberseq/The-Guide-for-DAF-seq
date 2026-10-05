@@ -21,3 +21,7 @@ Following a 10-minute incubation with SsDddA, reactions containing two different
 | Stergachis batch1 | 32% | 40% | 47% |
 | Stergachis batch2 | 32% | 38% | 46% |
 | EpiCypher batch | 29% | 36% | 42% |
+
+
+
+
