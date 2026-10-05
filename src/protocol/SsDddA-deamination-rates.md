@@ -60,5 +60,6 @@ Water to 50 μl
 5. 68 C, 1 min
 6. hold at 4 C
 
-<img width="793" height="473" alt="image" src="https://github.com/user-attachments/assets/ef1d00d8-4cbb-47ff-907c-339b2282ddca" />
+<img width="1674" height="1027" alt="image" src="https://github.com/user-attachments/assets/d20be9cb-6602-4238-aac8-3ab33eaf2a26" />
+
 
