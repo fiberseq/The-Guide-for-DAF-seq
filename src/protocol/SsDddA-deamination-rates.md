@@ -33,9 +33,7 @@ Amplicon length: 4878 bp
 
 **PCR mix**
 SsDddA-treated DNA(~30-50ng)
-
 1.5 μL 5 μM Forward primer
-
 1.5 μL 5 μM Reverse primer
 25 μl. repliQa HiFi ToughMix(2X) (Qunatabio; Part No:95200-100)
 Water to 50 μl
