@@ -11,6 +11,7 @@
 - [Protein Purification](protocol/protein-purification.md)
     - [SsDddA Purification](protocol/ddda-purification.md)
     - [DddI Purification](protocol/dddi-purification.md)
+    - [SsDddI Activity](protocol/SsDddA-deamination-rates.md)
 
 ---
 
