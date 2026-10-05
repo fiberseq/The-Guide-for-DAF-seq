@@ -53,7 +53,7 @@ Water to 50 μl
 
 ### Thermocycling (both CA10 & NAPA)  
 1. 98 C, 30s
-2. 2. 98 C, 10s  
+2. 98 C, 10s  
 3. 66 C, 5s  
 4. 68 C, 25s  
 4. Go to step 2, 29x for 30 cycles total  
