@@ -4,6 +4,8 @@ This section covers the expression and purification of the *Simiaoa sunii* ([SsD
 
 We recommend storing SsDddA and DddI aliquots at -80 C. Both SsDddA and DddI are stable for at least 5 freeze-thaw cycles.
 
+Example Targeted DAF-seq deamination rates from multiple batches of SsDddA prepared at two different labs are available for reference [here](SsDddA-deamination-rates.md).
+
 ---
 ## Addgene
 
