@@ -1,6 +1,6 @@
 # SsDddA activity by protein preparation
 
-## Following a 10-minute incubation with SsDddA, reactions containing two different lots of the Stergachis lab SsDddA were stopped using Stergachis lab SsDddI, whereas reactions containing EpiCypher SsDddA were stopped using EpiCypher SsDddI. All subsequent steps were performed according to the standard DAF-seq protocol.
+Following a 10-minute incubation with SsDddA, reactions containing two different lots of the Stergachis lab SsDddA were stopped using Stergachis lab SsDddI, whereas reactions containing EpiCypher SsDddA were stopped using EpiCypher SsDddI. All subsequent steps were performed according to the standard DAF-seq protocol.
 
 ## Targeted DAF-seq median deamination rates by SsDddA production batch
 
