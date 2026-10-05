@@ -1,6 +1,6 @@
 # SsDddA activity by protein preparation
 
-Following a 10-minute incubation with SsDddA, reactions containing two different lots of the Stergachis lab SsDddA were stopped using Stergachis lab SsDddI, whereas reactions containing EpiCypher SsDddA were stopped using EpiCypher SsDddI. All subsequent steps were performed according to the standard DAF-seq protocol.
+Following a 10-minute incubation with SsDddA, reactions containing two different lots of the Stergachis lab SsDddA were stopped using Stergachis lab SsDddI, whereas reactions containing EpiCypher SsDddA were stopped using EpiCypher SsDddI. All subsequent steps were performed according to the standard Targeted DAF-seq protocol.
 
 ## Targeted DAF-seq median deamination rates by SsDddA production batch
 
@@ -28,7 +28,7 @@ Following a 10-minute incubation with SsDddA, reactions containing two different
 
 ## PCR primers and reaction conditions
 
-**CA10  primers (hg38, chr17:51829518-51834396)**  
+**_CA10_  primers (hg38, chr17:51829518-51834396)**  
 Forward: AAGGAGTCATGAGGGACGTATGCAA  
 Reverse: AGGCAGGTCCATGAAGAGTGTCCATT  
 Amplicon length: 4878 bp
@@ -40,23 +40,31 @@ SsDddA-treated DNA(~30-50ng)
 25 μl. repliQa HiFi ToughMix(2X) (Qunatabio; Part No:95200-100)  
 Water to 50 μl
 
-**NAPA primers (hg38, chr19:47,514,488-47,518,985)**  
+**_CA10_ Thermocycling  **
+1. 98 C, 30s
+2. 98 C, 10s  
+3. 66 C, 5s  
+4. 68 C, 25s  
+4. Go to step 2, 29x for 30 cycles total  
+5. 68 C, 1 min
+6. hold at 4 C
+
+**_NAPA_ primers (hg38, chr19:47,514,488-47,518,985)**  
 Forward: TCCCCTCCAARRCTTCAR  
 Reverse: CAACCCCCRCAACCTATCA  
 Amplicon length: 4498 bp
 
 **PCR mix**  
-DAF-treated DNA(~30-50ng)  
+SsDddA-treated DNA(~30-50ng)  
 3 μL 5 μM Forward primer  
 3 μL 5 μM Reverse primer  
 25 μl. repliQa HiFi ToughMix(2X) (Qunatabio; Part No:95200-100)  
 Water to 50 μl
 
-
-### Thermocycling (both CA10 & NAPA)  
+**_NAPA_ Thermocycling  **
 1. 98 C, 30s
 2. 98 C, 10s  
-3. 66 C, 5s  
+3. 56 C, 5s  
 4. 68 C, 25s  
 4. Go to step 2, 29x for 30 cycles total  
 5. 68 C, 1 min
