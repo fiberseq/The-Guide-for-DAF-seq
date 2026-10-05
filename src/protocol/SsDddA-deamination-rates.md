@@ -22,6 +22,8 @@ Following a 10-minute incubation with SsDddA, reactions containing two different
 | Stergachis batch2 | 32% | 38% | 46% |
 | EpiCypher batch | 29% | 36% | 42% |
 
+### Typical per-read deamination rates
+<img width="1674" height="1027" alt="image" src="https://github.com/user-attachments/assets/d20be9cb-6602-4238-aac8-3ab33eaf2a26" />
 
 
 ## PCR primers and reaction conditions
@@ -59,7 +61,4 @@ Water to 50 μl
 4. Go to step 2, 29x for 30 cycles total  
 5. 68 C, 1 min
 6. hold at 4 C
-
-<img width="1674" height="1027" alt="image" src="https://github.com/user-attachments/assets/d20be9cb-6602-4238-aac8-3ab33eaf2a26" />
-
 
