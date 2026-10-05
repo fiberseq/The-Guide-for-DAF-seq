@@ -40,7 +40,7 @@ SsDddA-treated DNA(~30-50ng)
 25 μl. repliQa HiFi ToughMix(2X) (Qunatabio; Part No:95200-100)  
 Water to 50 μl
 
-**_CA10_ Thermocycling  **
+**_CA10_ Thermocycling**
 1. 98 C, 30s
 2. 98 C, 10s  
 3. 66 C, 5s  
@@ -61,7 +61,7 @@ SsDddA-treated DNA(~30-50ng)
 25 μl. repliQa HiFi ToughMix(2X) (Qunatabio; Part No:95200-100)  
 Water to 50 μl
 
-**_NAPA_ Thermocycling  **
+**_NAPA_ Thermocycling**
 1. 98 C, 30s
 2. 98 C, 10s  
 3. 56 C, 5s  
