@@ -43,8 +43,8 @@ This protocol covers the complete DAF-seq workflow from nuclei isolation through
 | 1 mM EDTA, pH 8.0 | 0.5 M EDTA, pH 8.0 | 2 µL |
 | 0.5 mM EGTA, pH 8.0 | 0.5 M EGTA, pH 8.0 | 1 µL |
 | 0.5 mM Spermidine | 0.5 M Spermidine | 1 µL |
-| 0.1 mM DTT | 100mM DTT | 10 µL |
-| 0.1% Triton X-100 | 10% Triton X-100 | 30 µL |
+| 1 mM DTT | 100mM DTT | 10 µL |
+| 0.3% Triton X-100 | 10% Triton X-100 | 30 µL |
 | 1x Protease inhibitor | 50x in EtOH (Promega G6521) | 20 µL |
 | 0.2U RNasein plus | 40U/ul RNasein plus | 5 µL |
 
