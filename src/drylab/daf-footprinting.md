@@ -6,9 +6,9 @@ This page explains how [FiberHMM](fiberhmm.md) turns deamination patterns into n
 
 FiberHMM describes each molecule by the sites where the assay can report a modification and the modifications observed there. For DAF-seq the sites are the cytosines (C-to-T) or guanines (G-to-A) of one strand, and the modification is a deamination. Assays differ in how dense these sites are and how strongly accessible and protected DNA differ: PacBio Hia5 Fiber-seq reports about 50 possible sites per 100 bp because it reads modified adenines on both strands, roughly twice the density of single-strand methods such as DAF-seq. The caller has to account for this, so short protected stretches are only called where the data can support them.
 
-![FiberHMM's three calling steps across four chemistries](img/fig1-fiberhmm-chemistries.png)
+![FiberHMM's three calling steps](img/calling-steps.png)
 
-*Fig. 1 of the preprint. **a**, Each chemistry is processed by `fiberhmm-call` in three steps, shown on one real 600-bp window per assay: HMM segmentation into protected (gray) and accessible DNA, nucleosome refinement at linkers (green) and footprint refinement (sky blue). Ticks, informative sites; black dots, deaminations; purple dots, m6A. **b**, Possible sites per 100 bp and event probabilities in protected and accessible DNA per assay. **c**, Footprint- and nucleosome-length distributions; dotted curves, HMM segmentation alone (DddB: 86,591 molecules from 22 Drosophila amplicon libraries).*
+*The three calling steps on one real 600-bp window per assay: HMM segmentation (gray), nucleosome refinement (green) and footprint refinement (sky blue). From the [preprint](https://www.biorxiv.org/content/10.64898/2026.10.29.762797v1).*
 
 ## The three calling steps
 
@@ -24,9 +24,9 @@ SsDddA, used in single-cell DAF-seq (scDAF-seq), deaminates not only accessible 
 
 FiberHMM instead finds nucleosome cores with relaxed emission probabilities and keeps the deaminations that fit the rotational phase inside the particle. This gives individual, mononucleosome-sized calls while keeping the accessible flanks. Across 20,915 molecules it doubled the number of called intervals per kilobase, mostly by resolving long merged intervals into separate nucleosomes. Adjacent same-strand SsDddA targets tend to convert together, so FiberHMM counts each such run once. `fiberhmm-call --enzyme ddda` applies all of this by default.
 
-![SsDddA rotational inference, duplex validation and CpG-island methylation](img/fig2-ssddda-duplex-mcg.png)
+![One SsDddA molecule called with and without the phase model](img/ssddda-phase-model.png)
 
-*Fig. 2 of the preprint. **a**, Deamination-to-deamination spacing (left) and deamination probability around inferred nucleosome dyads (right): rotational period 10.32 bp. **b**, One scDAF-seq molecule called without and with the phase model. **c**, Called-interval lengths for 20,915 molecules without and with the phase model. **d**, Physical duplexes with an accessible and a protected query interval (teal/amber, C-to-T and G-to-A sites; black dots, deaminations). **e**, Deamination on the untouched partner strand in accessible and protected windows across 12 libraries. **f**, Whole-island methylation inference for one molecule across an 890-bp CpG island (1/15 CpGs and 32/55 non-CpG cytosines deaminated). **g**, Footprints in the dashed window of f, called with all sites and with CpGs excluded.*
+*One single-cell DAF-seq molecule called without the phase model (gray: nucleosomes broken at internal deaminations) and with it (green: two mononucleosome-sized calls). Dashed lines mark the rotationally phased positions; black dots are deaminations. From the [preprint](https://www.biorxiv.org/content/10.64898/2026.10.29.762797v1).*
 
 ## Duplex calibration and calling
 
