@@ -4,7 +4,8 @@ FiberBrowser is an interactive, single-molecule-genomics-focused genome
 browser for DAF-seq, Fiber-seq, and a variety of other genomic datatypes.
 It is the visualization component of the
 [FiberHMM](https://github.com/fiberseq/FiberHMM) pipeline, but does not
-require footprints to be useful. It allows fast and convenient exploration
+require footprints to be useful. FiberBrowser and FiberHMM are described in
+our [bioRxiv preprint](https://www.biorxiv.org/content/10.64898/2026.10.29.762797v1). It allows fast and convenient exploration
 and quantitative analysis of per-read footprinting and
 methylation/deamination patterns across 1000s of reads, providing extensive
 functionality missing from modern browsers which focus on aggregate
@@ -51,8 +52,25 @@ FiberBrowser sits downstream of the [DAF-QC Pipeline](daf-qc.md): once you
 have QC'd reads and called footprints, FiberBrowser is where you explore
 them.
 
-## Early access
+## Get FiberBrowser
 
-FiberBrowser is in pre-release while we finalize the public repository. If
-you'd like to try it on your data, reach out at tommywtullius [at]
-gmail.com.
+FiberBrowser is open source (MIT) at
+[github.com/fiberseq/FiberBrowser](https://github.com/fiberseq/FiberBrowser).
+
+- **Mac app** (Apple silicon, macOS 14+): download the `.dmg` from
+  [Releases](https://github.com/fiberseq/FiberBrowser/releases). It bundles
+  Python, FiberHMM, minimap2 and BLAST+.
+- **Windows app** (Windows 10 2004+ or 11): run the `Setup.exe` from
+  [Releases](https://github.com/fiberseq/FiberBrowser/releases).
+- **Command line** (macOS, Linux or WSL; Python 3.10+):
+  `pipx install "fiberbrowser[app]"`, then run `fiberbrowser`. This also
+  installs FiberHMM from PyPI.
+
+The [documentation](https://github.com/fiberseq/FiberBrowser/blob/main/docs/index.md)
+covers installation, a tutorial and the user guide.
+
+## Cite
+
+If you use FiberBrowser or FiberHMM, please cite:
+
+> Tullius, T. W., Catalano, C., Ranchalis, J., Hu, J., Vollger, M. R., Stergachis, A. B., & Levine, M. S. (2026). FiberBrowser: a unified framework for single-molecule genomics. *bioRxiv*. [https://doi.org/10.64898/2026.10.29.762797](https://doi.org/10.64898/2026.10.29.762797)

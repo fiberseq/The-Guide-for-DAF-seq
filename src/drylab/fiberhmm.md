@@ -4,6 +4,8 @@
 
 For DAF-seq, FiberHMM is a native nucleosome and footprint caller that runs directly on deaminase data with DAF-trained HMM emissions, adds a log-likelihood-ratio recaller for transcription factor footprints, and writes spec-compliant [Molecular-annotation](https://github.com/fiberseq/Molecular-annotation-spec) tags. This page covers installation, inputs, and the recommended one-command workflow.
 
+The current release is FiberHMM 3.0.2 on [PyPI](https://pypi.org/project/fiberhmm/). FiberHMM and [FiberBrowser](fiberbrowser.md) are described in our [bioRxiv preprint](https://www.biorxiv.org/content/10.64898/2026.10.29.762797v1); please cite it if you use FiberHMM.
+
 ## Getting started
 
 Install from PyPI:
