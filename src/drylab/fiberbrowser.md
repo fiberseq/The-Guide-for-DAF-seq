@@ -52,6 +52,14 @@ FiberBrowser sits downstream of the [DAF-QC Pipeline](daf-qc.md): once you
 have QC'd reads and called footprints, FiberBrowser is where you explore
 them.
 
+## In the preprint
+
+![The FiberBrowser interface and joint clustering of three datasets at NANOG](img/fig3-fiberbrowser-interface.png)
+
+*Fig. 3 of the [preprint](https://www.biorxiv.org/content/10.64898/2026.10.29.762797v1). **a**, The interface with one H1 Fiber-seq dataset at NANOG: (1) file and session controls, (2) locus and panel navigation, (3) the toolbar of molecule operations, (4) the dataset panel header, (5) peak and custom-feature tracks, (6) the nucleosome and footprint metaprofile, (7) molecule rows drawn from their FiberHMM calls, (8) the cluster-membership strip, (9) the Clusters panel and (10) the rail that opens analysis panels. **b**, Joint clustering of lymphoblastoid and embryonic stem cell Fiber-seq at the NANOG promoter and an enhancer, with each dataset's share of each cluster.*
+
+How FiberHMM produces the calls FiberBrowser shows for DAF-seq is explained in [How FiberHMM calls DAF-seq](daf-footprinting.md).
+
 ## Get FiberBrowser
 
 FiberBrowser is open source (MIT) at

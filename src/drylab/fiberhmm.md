@@ -4,7 +4,7 @@
 
 For DAF-seq, FiberHMM is a native nucleosome and footprint caller that runs directly on deaminase data with DAF-trained HMM emissions, adds a log-likelihood-ratio recaller for transcription factor footprints, and writes spec-compliant [Molecular-annotation](https://github.com/fiberseq/Molecular-annotation-spec) tags. This page covers installation, inputs, and the recommended one-command workflow.
 
-The current release is FiberHMM 3.0.2 on [PyPI](https://pypi.org/project/fiberhmm/). FiberHMM and [FiberBrowser](fiberbrowser.md) are described in our [bioRxiv preprint](https://www.biorxiv.org/content/10.64898/2026.10.29.762797v1); please cite it if you use FiberHMM.
+Install the latest release from [PyPI](https://pypi.org/project/fiberhmm/). FiberHMM and [FiberBrowser](fiberbrowser.md) are described in our [bioRxiv preprint](https://www.biorxiv.org/content/10.64898/2026.10.29.762797v1); please cite it if you use FiberHMM.
 
 ## Getting started
 
@@ -39,48 +39,64 @@ At least one of these must be present on the input BAM.
 
 ## Usage
 
-`fiberhmm-call` is the recommended entry point. It fuses the nucleosome/MSP HMM and the TF recaller into a single in-process pipeline.
-
-### DddA
-
-FiberHMM automatically selects the DddA two-model workflow under the hood (a nucleosome model plus a TF recall pass with an efficiency uplift to match DddA's higher per-position deamination rate).
+`fiberhmm-call` runs the whole caller in one pass: HMM segmentation, nucleosome refinement and TF footprint refinement ([how it works](daf-footprinting.md)). Pick the enzyme; the bundled model and defaults follow.
 
 ```bash
-fiberhmm-call -i aligned.bam -o recalled.bam \
-              --mode daf --enzyme ddda \
-              -c 8 --io-threads 16 \
-              --region-parallel
+# DddB (aligned with MD tags, e.g. minimap2 --MD)
+fiberhmm-call -i aligned.bam -o calls.bam --enzyme dddb -c 8 --region-parallel
+
+# SsDddA (single-cell DAF-seq)
+fiberhmm-call -i aligned.bam -o calls.bam --enzyme ddda -c 8 --region-parallel
 ```
 
-`--region-parallel` requires a coordinate-sorted and indexed input and scales near-linearly with `--cores` up to the chromosome count. The output is sorted and indexed in place; no separate sort pass is needed.
+`--region-parallel` needs a coordinate-sorted, indexed input and scales with `-c`. The output is sorted and indexed.
 
-DddB samples are supported by the same commands with `--enzyme dddb`.
+For SsDddA, nucleosomes are placed by the phase-aware caller, which keeps the rotationally phased deaminations inside nucleosomes rather than reading them as linkers. CpGs are treated as methylated by default. To use CpG evidence where it is informative, classify whole CpG islands with `fiberhmm-tag-m5c` and call again; the second call uses CpGs only inside islands called unmethylated:
+
+```bash
+fiberhmm-call -i aligned.bam -o calls.bam --enzyme ddda -c 8 --region-parallel
+fiberhmm-tag-m5c -i calls.bam -o islands.bam -r genome.fa --enzyme ddda
+fiberhmm-call -i islands.bam -o calls.cpg.bam --enzyme ddda -c 8 --region-parallel
+```
+
+For paired single-cell strands (the C-to-T and G-to-A copies of one fiber), `fiberhmm-pair` joins the two strands of each duplex so they are called together ([duplex calling](daf-footprinting.md#duplex-calibration-and-calling)).
+
+From raw reads of a plasmid or amplicon run (for example a Plasmidsaurus Nanopore run), `fiberhmm-pipeline` aligns, calls and runs QC in one command:
+
+```bash
+fiberhmm-pipeline reads.fastq.gz --reference construct.dna --enzyme dddb -o my_run/
+```
 
 ## Key outputs
 
-`fiberhmm-call` writes a tagged BAM that downstream tools like FiberBrowser and Fibertools can read directly.
+`fiberhmm-call` writes a tagged BAM that FiberBrowser, FIRE and fibertools read directly.
 
-- **Legacy footprint tags** (`ns`/`nl`, `as`/`al`): nucleosome and MSP starts and lengths, compatible with any tool in the fibertools ecosystem.
-- **Molecular-annotation spec tags** (`MA`, `AQ`): per-spec `nuc+Q`, `msp+`, and `tf+QQQ` annotations with LLR-based confidence (`tq`) and edge-sharpness bytes (`el`, `er`) on TF calls. See the [spec](https://github.com/fiberseq/Molecular-annotation-spec) for the encoding.
-- **TF/Pol II footprints**: sub-nucleosomal calls (typically 15–80 bp) live in the `tf+QQQ` annotation of `MA`/`AQ`. For DAF-seq, the recaller uses a tuned `--min-llr` (5.0 for DddA, 4.0 for DddB) selected automatically by `--enzyme`.
+- **Molecular-annotation tags** (`MA`, `AQ`): every call, in `nuc.QQQ` (nucleosomes), `msp.` (accessible patches) and `tf.QQQ` (TF, Pol II and other sub-nucleosomal footprints) groups, with per-call quality bytes: the LLR-based score and left and right edge sharpness. See the [spec](https://github.com/fiberseq/Molecular-annotation-spec) for the encoding.
+- **Legacy tags** (`ns`/`nl`, `as`/`al`): nucleosome and MSP starts and lengths, for tools that read only those. TF footprints are in `MA` only.
+- **Footprint threshold**: TF footprints are called at LLR 5 for every chemistry, the lowest integer threshold at which calls in accessible controls stay below 2%. `--min-llr` overrides it.
 
 ### Extract to bigBed
 
-For a smaller-filesize representation of the call set for downstream analysis and [FiberBrowser](https://github.com/fiberseq/FiberBrowser), convert the tagged BAM:
+For a compact copy of the calls for genome browsers and downstream analysis:
 
 ```bash
-fiberhmm-extract -i recalled.bam --footprint --msp --tf --bigbed
+fiberhmm-extract -i calls.bam --nucleosome --msp --tf
 ```
+
+This writes bigBed files next to the BAM (`--bed-only` for plain BED; UCSC `bedToBigBed` must be installed for bigBed).
 
 ## Choosing options
 
 | Situation | Command |
 |---|---|
-| Default: full pipeline on a sorted + indexed DAF-seq BAM | `fiberhmm-call --mode daf --enzyme ddda --region-parallel` |
-| Want FIRE element calls afterwards | Pipe `fiberhmm-call -o -` into `ft fire - final.bam` |
-| DddB samples | swap `--enzyme ddda` for `--enzyme dddb` in any of the above |
+| DddB, sorted and indexed BAM | `fiberhmm-call --enzyme dddb --region-parallel` |
+| SsDddA, sorted and indexed BAM | `fiberhmm-call --enzyme ddda --region-parallel` |
+| SsDddA with CpG-island methylation | `fiberhmm-call`, then `fiberhmm-tag-m5c`, then `fiberhmm-call` again |
+| Paired single-cell strands | `fiberhmm-pair` |
+| FIRE element calls afterwards | pipe `fiberhmm-call -o -` into `ft fire - final.bam` |
+| Raw reads of a plasmid or amplicon run | `fiberhmm-pipeline` |
 
-For Hia5 fiber-seq usage and the full CLI surface (training new models, exporting posteriors, model inspection), see the FiberHMM README.
+The [FiberHMM documentation](https://fiberseq.github.io/FiberHMM/) covers every command and option, including Hia5 Fiber-seq, training new models and posterior export.
 
 ## Further reading
 
