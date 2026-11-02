@@ -19,6 +19,7 @@
 
 - [DAF-QC Pipeline](drylab/daf-qc.md)
 - [FiberHMM](drylab/fiberhmm.md)
+    - [How FiberHMM calls DAF-seq](drylab/daf-footprinting.md)
 - [FiberBrowser](drylab/fiberbrowser.md)
 
 ---

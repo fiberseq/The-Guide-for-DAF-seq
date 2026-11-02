@@ -21,6 +21,23 @@ If you use DAF-seq in your research, please cite the following:
 }
 ```
 
+If you use FiberHMM or FiberBrowser to call footprints in or explore DAF-seq data, please also cite:
+
+> Tullius, T. W., Catalano, C., Ranchalis, J., Hu, J., Vollger, M. R., Stergachis, A. B., & Levine, M. S. (2026). FiberBrowser: a unified framework for single-molecule genomics. *bioRxiv*. [https://doi.org/10.64898/2026.10.29.762797](https://doi.org/10.64898/2026.10.29.762797)
+
+```bibtex
+@article{tullius2026fiberbrowser,
+  title   = {{FiberBrowser}: a unified framework for single-molecule genomics},
+  author  = {Tullius, Thomas W. and Catalano, Christopher and Ranchalis, Jane and
+             Hu, Jie and Vollger, Mitchell R. and Stergachis, Andrew B. and
+             Levine, Michael S.},
+  journal = {bioRxiv},
+  year    = {2026},
+  doi     = {10.64898/2026.10.29.762797},
+  url     = {https://www.biorxiv.org/content/10.64898/2026.10.29.762797v1}
+}
+```
+
 ### Related resources
 
 - [DAF-seq Manuscript repository](https://github.com/StergachisLab/DAF-seq-Manuscript) -- Analysis code and supplementary materials
