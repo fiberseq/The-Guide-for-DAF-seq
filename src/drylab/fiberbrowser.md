@@ -1,81 +1,40 @@
 # FiberBrowser
 
-FiberBrowser is an interactive, single-molecule-genomics-focused genome
-browser for DAF-seq, Fiber-seq, and a variety of other genomic datatypes.
-It is the visualization component of the
-[FiberHMM](https://github.com/fiberseq/FiberHMM) pipeline, but does not
-require footprints to be useful. FiberBrowser and FiberHMM are described in
-our [bioRxiv preprint](https://www.biorxiv.org/content/10.64898/2026.10.29.762797v1). It allows fast and convenient exploration
-and quantitative analysis of per-read footprinting and
-methylation/deamination patterns across 1000s of reads, providing extensive
-functionality missing from modern browsers which focus on aggregate
-short-read tracks.
+[![GitHub](https://img.shields.io/github/v/release/fiberseq/FiberBrowser?color=green)](https://github.com/fiberseq/FiberBrowser)
+[![PyPI](https://img.shields.io/pypi/v/fiberbrowser)](https://pypi.org/project/fiberbrowser/)
 
-![FiberBrowser overview at the eve locus](img/fiberbrowser-overview.png)
+FiberBrowser is an interactive genome browser for single-molecule chromatin data: Fiber-seq (m6A, PacBio or Oxford Nanopore) and DAF-seq (deamination, DddB or SsDddA). Most browsers summarise reads into coverage tracks. FiberBrowser draws every molecule as its own row, with its nucleosomes, transcription-factor and other small footprints, accessible DNA and base modifications, and lets you analyse those molecules as a population: cluster them, compare datasets, split them by haplotype or allele, and export figures and the numbers behind them.
 
-*2-4 hr Fiber-seq at the* eve *locus in Drosophila embryos. 1,259 reads span
-the region; the browser draws every footprint on every read, and every
-downstream analysis is computed on the full read set.*
+The footprints come from [FiberHMM](fiberhmm.md), which FiberBrowser installs and runs. FiberHMM writes its calls into the BAM as Molecular-annotation tags, so the same calls feed FiberBrowser, FIRE and your own scripts.
 
-## Features
+![FiberBrowser at NANOG: H1 Fiber-seq molecules clustered on accessibility, with the Clusters panel](img/interface-nanog.png)
 
-- **Per-read heatmaps** of m6A / DAF accessibility, drawn as a single canvas
-  layer so loci with thousands of reads stay responsive.
-- **Single-molecule clustering** on CRE accessibility patterns, with
-  per-cluster metaprofiles, merge / reorder / hide controls, and a sortable
-  read table.
-- **Direct comparison across perturbations or timepoints** -- load multiple
-  datasets at once and joint-cluster them so the same single-molecule state
-  definitions apply across conditions, making perturbation effects readable
-  at single-read resolution.
-- **Customizable footprint labeling** -- recolor footprints by user-defined
-  rules (Pol II, NFR, TF, nucleosome) using size and overlap criteria.
-- **Transcription-state quantification** -- filter and count reads matching
-  paused, PIC, elongating, or hyperbound Pol II configurations at a
-  selected gene.
-- **Footprint inspection and motif enrichment** -- pull motif hits and
-  FASTA for any single footprint and compare to references (ChIP-nexus,
-  motif databases).
-- **DAF-seq primer design** -- design and BLAST-check primers for targeted
-  DAF-seq amplicons directly from the browser, with IDT / Twist CSV export.
-  See also the [Primer Design](../protocol/primer-design.md) guidelines.
-- **Headless / API mode and Jupyter control** -- drive the browser
-  programmatically via its FastAPI endpoints or a Python client; load
-  regions, pull cluster assignments, fetch co-accessibility matrices, and
-  render figures directly from a notebook.
-- **Local LLM copilot** (optional) -- natural-language commands that drive
-  the browser via a model running on your machine (MLX on Mac, Ollama
-  elsewhere); doubles as an interactive tutorial for discovering features.
-- ...and more.
+*H1 Fiber-seq at NANOG. Each row is one molecule, grouped into three clusters by its footprints at the selected peaks; the Clusters panel on the right shows their sizes and average profiles. From the [preprint](https://www.biorxiv.org/content/10.64898/2026.10.29.762797v1).*
 
-FiberBrowser sits downstream of the [DAF-QC Pipeline](daf-qc.md): once you
-have QC'd reads and called footprints, FiberBrowser is where you explore
-them.
+## What you can do with it
 
-## At a glance
+- **See every molecule.** Each read is drawn with its calls, at thousands of reads per locus.
+- **Turn a locus into a population analysis.** Cluster molecules by their footprints at chosen peaks, compare cluster proportions across datasets with confidence intervals, and sort or filter by any footprint.
+- **Find recurrent footprints.** Footprint classes groups footprints that recur at the same place across molecules and measures how often each molecule carries them; co-occupancy tests which footprints occur together on the same molecules.
+- **Compare alleles on single fibers.** Split molecules by haplotype, by a variant's base, or by carriage of a structural variant, and expand an insertion to see the chromatin inside it.
+- **Export.** Figures as PNG, SVG or PDF, and the per-read data behind every panel.
+- **Script it.** A Python API and Jupyter integration drive the same engine.
 
-![FiberBrowser at NANOG: H1 Fiber-seq molecules clustered on accessibility](img/interface-nanog.png)
+## For DAF-seq
 
-*H1 Fiber-seq at NANOG, molecules clustered on accessibility, with the Clusters panel on the right. From the [preprint](https://www.biorxiv.org/content/10.64898/2026.10.29.762797v1).*
+- **After QC.** FiberBrowser sits downstream of the [DAF-QC pipeline](daf-qc.md): open the QC'd, FiberHMM-called BAMs directly. [How FiberHMM calls DAF-seq](daf-footprinting.md) explains the calls you see.
+- **Deamination marks.** **Layers › Deamination** draws the individual C-to-T and G-to-A deaminations on each molecule, under or instead of the footprint calls.
+- **Runs from raw reads.** **New DAF-seq run** takes FASTQ reads (for example from a Plasmidsaurus Nanopore run) and a reference or plasmid map, and aligns, calls and opens the result.
+- **Primer design.** Design and BLAST-check primers for targeted DAF-seq amplicons from the browser, with IDT and Twist order sheets. See also the [Primer Design](../protocol/primer-design.md) guidelines.
 
-How FiberHMM produces the calls FiberBrowser shows for DAF-seq is explained in [How FiberHMM calls DAF-seq](daf-footprinting.md).
+## Get started
 
-## Get FiberBrowser
+Install, open your data and run a first analysis with the getting-started guide on the Fiber-seq site, which applies to DAF-seq as well:
 
-FiberBrowser is open source (MIT) at
-[github.com/fiberseq/FiberBrowser](https://github.com/fiberseq/FiberBrowser).
+- [Getting started with FiberBrowser](https://fiberseq.github.io/fiberbrowser/getting-started.html)
+- [A tour of the features](https://fiberseq.github.io/fiberbrowser/features.html)
 
-- **Mac app** (Apple silicon, macOS 14+): download the `.dmg` from
-  [Releases](https://github.com/fiberseq/FiberBrowser/releases). It bundles
-  Python, FiberHMM, minimap2 and BLAST+.
-- **Windows app** (Windows 10 2004+ or 11): run the `Setup.exe` from
-  [Releases](https://github.com/fiberseq/FiberBrowser/releases).
-- **Command line** (macOS, Linux or WSL; Python 3.10+):
-  `pipx install "fiberbrowser[app]"`, then run `fiberbrowser`. This also
-  installs FiberHMM from PyPI.
-
-The [documentation](https://github.com/fiberseq/FiberBrowser/blob/main/docs/index.md)
-covers installation, a tutorial and the user guide.
+The source code and full documentation are on [GitHub](https://github.com/fiberseq/FiberBrowser); the [user guide](https://github.com/fiberseq/FiberBrowser/blob/main/docs/guide.md) covers every feature.
 
 ## Cite
 
